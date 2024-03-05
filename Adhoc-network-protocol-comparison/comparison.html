@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Analysis of MANET Routing Protocols</title>
+  <link rel="stylesheet" type="text/css" href="/assets/css/styles.css">
+
+  <script>
+    // Function to animate the text
+    function animateText() {
+      const texts = document.querySelectorAll('.animated-text');
+  
+      texts.forEach((text, index) => {
+        // Set initial opacity to 0
+        text.style.opacity = 0;
+  
+        // Animate the text elements
+        setTimeout(() => {
+          text.style.opacity = 1;
+        }, (index + 1) * 500); // Delay the animation for each text element
+      });
+    }
+  
+    // Call the animateText function when the page loads
+    window.onload = animateText;
+  </script>
+  
+  <header>
+    <div class="logo-container">
+      <img src="chandigarh-university-seal-1.png" alt="Project Logo">
+    </div>
+    <div class="header-text">
+      <h1>Results </h1>
+    </div>
+  </header>
+  <main>
+    
+
+
+    <section id="results-section">
+     
+      <p>
+        Here are the results of the comparison, discussing each metric and presenting the findings for each protocol.
+      </p>
+      <div class="graph" id="throughput-nodes">
+        <img src="/Results/ThroughputVsNoOfNodes.png" alt="Throughput vs Number of Nodes" class="animated-graph">
+        <div class="animated-text">Graph showing the comparison of throughput for different routing protocols as the number of nodes increases.</div>
+        <p class="evaluation-summary">Based on the throughput metric, DSR outperforms OLSR, DSDV, and AODV, showing better performance.</p>
+      </div>
+      
+
+      <!-- Add more sections for different metrics -->
+      <div class="graph" id="throughput-mobility">
+        <img src="Results\ThroughputvsNodeMobility.png" alt="Throughput vs Node Mobility" class="animated-graph">
+        <p class="animated-text">Graph showing the comparison of throughput for different routing protocols at various node mobility values.</p>
+        <p class="evaluation-summary">In terms of throughput, DSDV demonstrates a consistent rise from 10mps to 30mps, outperforming OLSR, DSR, and AODV. AODV exhibits a rise in throughput from 10mps to 20mps, followed by a fall from 20mps to 30mps.</p>
+      </div>
+
+      <div class="graph" id="delay-nodes">
+        <img src="Results\DelayVsNoOfNodes.png" alt="Delay vs Number of Nodes" class="animated-graph">
+        <p class="animated-text">Graph showing the comparison of end-to-end delay for different routing protocols as the number of nodes increases.</p>
+        <p class="evaluation-summary">In terms of delay, AODV shows a rapid decrement compared to DSDV and DSR. DSDV exhibits the highest
+            end-to-end delay in all cases.</p>
+        </div>
+
+        <!-- Add more sections for different metrics -->
+        <div class="graph" id="delay-mobility">
+          <img src="Results\AvgDelayVsNodeMobility.png" alt="Average Delay vs Node Mobility" class="animated-graph">
+          <p class="animated-text">Graph showing the comparison of average delay for different routing protocols at various node mobility values.</p>
+          <p class="evaluation-summary">At 10mps, DSDV has the highest average delay, which continues even when the node speed is increased to 20mps. However, at 30mps, DSDV has lower average delay than AODV.</p>
+        
+          <div class="graph" id="packet-drop-nodes">
+            <img src="Results\AvgPDRVsNodeMobility.png" alt="Packet Drop vs Number of Nodes" class="animated-graph">
+            <p class="animated-text">Graph showing the comparison of packet drop for different routing protocols as the number of nodes increases.</p>
+            <p class="evaluation-summary">In terms of packet drop, DSDV exhibits the lowest packet drop rate, followed by OLSR and AODV. DSR has the highest packet drop rate in all cases.</p>
+          </div>
+          <!-- Add more sections for different metrics -->
+          <div class="graph" id="packet-drop-mobility">
+              <img src="Results\AvgPDRVsNodeMobility.png" alt="Packet Drop vs Node Mobility" class="animated-graph">
+              <p class="animated-text">Graph showing the comparison of packet drop for different routing protocols at various node mobility values.</p>
+              <p class="evaluation-summary">In terms of packet drop, DSDV exhibits the lowest packet drop rate at all node mobility values. OLSR has the second lowest packet drop rate, followed by AODV and DSR.</p>
+            </div>
+    
+          <div class="graph" id="jitter-nodes">
+            <img src="Results\JitterVsNoOfNodes.png" alt="Jitter vs Number of Nodes" class="animated-graph">
+            <p class="animated-text">Graph showing the comparison of jitter for different routing protocols as the number of nodes increases.</p>
+            <p class="evaluation-summary">In terms of jitter, DSDV exhibits the lowest jitter rate, followed by OLSR and AODV. DSR has the highest jitter rate in all cases.</p>
+          </div>
+    
+          <!-- Add more sections for different metrics -->
+          <div class="graph" id="jitter-mobility">
+              <img src="Results\AvgJitterVsNodeMobility.png" alt="Jitter vs Node Mobility" class="animated-graph">
+              <p class="animated-text">Graph showing the comparison of jitter for different routing protocols at various node mobility values.</p>
+              <p class="evaluation-summary">In terms of jitter,exhibits the lowest jitter rate at all node mobility values. OLSR has the second lowest jitter rate, followed by AODV and DSR.</p>
+            </div>
+            <script>
+                // Function to animate the text
+                function animateText(text) {
+                  // Set initial opacity to 0
+                  text.style.opacity = 0;
+              
+                  // Animate the text element
+                  const fadeIn = setInterval(() => {
+                    if (text.style.opacity < 1) {
+                      text.style.opacity = parseFloat(text.style.opacity) + 0.1;
+                    } else {
+                      clearInterval(fadeIn);
+                    }
+                  }, 50);
+                }
+              
+                // Add event listeners to animate text on hover
+                const textElements = document.querySelectorAll('.animated-text');
+              
+                textElements.forEach((text) => {
+                  text.parentNode.addEventListener('mouseover', () => {
+                    animateText(text);
+                  });
+                });
+              </script>
+              
+             
+            
+    
+          <h2>Conclusion</h2>
+          <p>
+            Based on the results of the analysis, it can be concluded that OLSR outperforms DSR, and AODV in terms of throughput, packet drop rate, and jitter. However, <strong>AODV</strong> has the lowest average delay at all node mobility values under all attacks.</p>
+
+            <nav  class="button-container"> 
+              <ul>
+             <li> <a href="/Home.html" class="button">Home</a></li>
+              </ul>
+          </main>
+        </body>
+    </html>
+    

@@ -1,0 +1,154 @@
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px;
+  background-color: #f2f2f2;
+}
+
+.logo-container {
+  margin-right: 20px;
+}
+
+.logo-container img {
+  height: 50px; /* Adjust the height as needed */
+}
+
+.header-text {
+  flex-grow: 1;
+}
+header  {
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+.logo-container {
+  margin-right: 20px;
+}
+
+.logo-container img {
+  height: 50px; /* Adjust the height as needed */
+}
+
+.header-text {
+  flex-grow: 1;
+}
+header  {
+  font-family: "Times New Roman", Times, serif;
+}
+
+
+h1 {
+  margin: 0;
+}
+
+section {
+  padding: 40px;
+}
+
+h2 {
+  margin: 0 0 20px;
+}
+
+.collapsible:hover {
+  background-color: #f5f5f5; /* Change the background color to your desired color */
+}
+.collapsible:hover h2 {
+  color: #ff5252; /* Change the text color to your desired color */
+}
+  
+.collapsible .content {
+  display: none;
+  padding: 10px;
+  border: 1px solid #ddd; /* Add border style */
+  border-top: none; /* Remove top border for the first section */
+}
+
+.collapsible h2 {
+  cursor: pointer;
+  position: relative;
+  padding-right: 30px; /* Added padding to create space for the toggle icon */
+  border-bottom: 1px solid #ddd; /* Add border style */
+}
+
+.collapsible .toggle-icon {
+  position: static; /* Changed to static positioning */
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+}
+
+.collapsible .toggle-icon::before {
+  content: '+';
+}
+
+.collapsible.active .toggle-icon::before {
+  content: '-';
+}
+
+.collapsible.active .content {
+  display: block;
+}
+
+.collapsible .content {
+  opacity: 0;
+  transition: opacity 0.5s ease-in;
+}
+
+.collapsible.active .content {
+  opacity: 1;
+  transition: opacity 0.5s ease-out;
+}
+.collapsible .toggle-icon::before {
+content: url(before.png);
+width: 16px;
+height: 16px; /* Replace path/to/plus-icon.png with the actual path to your plus icon image */
+}
+
+.collapsible.active .toggle-icon::before {
+content: url(after.png); /* Replace path/to/minus-icon.png with the actual path to your minus icon image */
+}
+
+.button-container {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  background-color: #f1f1f1;
+}
+
+.button-container ul {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+}
+
+.button-container li {
+  margin: 0 5px;
+}
+
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: #6d7072;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.3s ease;
+}
+
+.button:hover {
+  background-color: #121111;
+}
+
+

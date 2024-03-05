@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Routing Protocols</title>
+  <link rel="stylesheet" href="/assets/css/pro.css">
+</head>
+<style>
+  .collapsible .toggle-icon {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    background-color: #000;
+    margin-left: 5px;
+    cursor: pointer;
+  }
+  .collapsible .content {
+    display: none;
+  }
+  .collapsible.collapsed .content {
+    display: block;
+  }
+</style>
+
+<body>
+    <body>
+        <header>
+          <div class="logo-container">
+            <img src="/assets/img/chandigarh-university-seal-1.png" alt="Project Logo">
+          </div>
+          <div class="header-text">
+            <h1>Routing Protocols</h1>
+          </div>
+        </header>
+  
+ 
+  <section id="prtocol1" class="collapsible">
+    <h2>Protocol 1: Optimized Link State Routing Protocol (OLSR)  <span class="toggle-icon"></span></h2>
+    <div class="content">
+        <p>
+            The Optimized Link State Routing Protocol (OLSR) is a proactive routing protocol based on the link-state algorithm. As a proactive protocol, OLSR maintains up-to-date routing information within the network, making routes readily available when needed.
+        </p>
+        <p>
+            OLSR minimizes the overhead of flooding routes in highly connected networks by employing Multipoint Relays (MPRs). Each node selects a set of neighboring nodes to retransmit packets, called its MPRs. Only MPRs forward control packets, ensuring that information reaches the entire network. Hello messages are used to gather information about link status and neighboring nodes, while Topology Control (TC) messages broadcast information about advertised neighbors, including the MPR selector list.
+        </p>
+        <p>
+            OLSR supports neighbor sensing, efficient flooding of control traffic, and sufficient topology information. By optimizing the link-state algorithm, OLSR reduces flooding duplication and controls the time intervals for control message transmission. This results in reduced overhead and improved efficiency in highly connected networks.
+       
+            <figure style="text-align: center;">
+                <img src="olsr.jpg" alt="OLSR">
+                <figcaption>OLSR</figcaption>
+              </figure>
+            </div>
+    </div>
+</section>
+<section id="protocol2"  class="collapsible">
+    <h2>Protocol 2: Ad-hoc On-Demand Distance Vector (AODV)  <span class="toggle-icon"></span></h2>
+    <div class="content">
+        <p>
+            The Ad-hoc On-Demand Distance Vector (AODV) routing protocol is a reactive protocol that establishes routes only when they are needed. AODV utilizes an on-demand mechanism for route discovery and route maintenance, along with hop-by-hop routing and sequence numbers.
+        </p>
+        <p>
+            In AODV, the routing table contains information about the next hop to the destination and the sequence number received from the destination. When a node wants to discover a route, it broadcasts a Route REQuest (RREQ) message to its neighbors, including the requested destination's sequence number. Neighboring nodes reply with Route REPLY (RREP) packets if they have a corresponding route. If a route breakage is detected, a Route ERRor (RERR) message is sent to notify the neighbors.
+        </p>
+        <p>
+            AODV uses HELLO messages to periodically inform neighbors about the liveliness of links. This helps update the lifetime information in the routing table. AODV operates without the need for a central administrative system, reducing control traffic overhead and allowing nodes to conserve power by entering sleep mode.
+        </p>
+        <p>
+            AODV offers advantages such as reduced control traffic overhead, scalability, and route repair mechanisms. However, the latency in finding new routes can be increased compared to proactive protocols.
+        </p>
+    </p>
+    <figure style="text-align: center;">
+        <img src="aodv.png" alt="AODV">
+        <figcaption>AODV</figcaption>
+      </figure>
+    </div>
+</section>
+<section id="protocol3" class="collapsible">
+    <h2>Protocol 3: Dynamic Source Routing (DSR) <span class="toggle-icon"> </span></h2>
+    <div class="content">
+        <p>
+            Dynamic Source Routing (DSR) is a reactive protocol based on the concept of source routing. It requires each packet to carry the full address, including every hop in the route from the source to the destination. DSR focuses on on-demand route discovery and route maintenance.
+        </p>
+        <p>
+            DSR offers the advantage of storing multiple routes in the route cache of nodes. Before initiating route discovery, the source node checks its route cache for avalid route. If a valid route is found in the cache, there is no need for route discovery. Otherwise, the source node initiates route discovery by broadcasting a Route REQuest (RREQ) packet. The RREQ packet contains the source and destination addresses, a route record field, and a unique identification number.
+        </p>
+        <p>
+        Once the RREQ reaches either the destination or a node that knows a route to the destination, a Route REPLY (RREP) packet is sent back along the reverse route collected by the RREQ. Failed links are detected through acknowledgments or by passively overhearing forwarded packets. If a link failure occurs, a Route ERRor (RERR) packet is sent to notify the source node.
+        </p>
+        <p>
+        DSR does not require hello message exchanges, allowing nodes to conserve power by entering sleep mode. It also saves a considerable amount of bandwidth in the network. The protocol is considered efficient in terms of route discovery and maintenance, as well as route caching capabilities.
+        </p>
+      
+        <figure style="text-align: center;">
+            <img src="/assets/img/DSR.png" alt="DSR" sizes="100%">
+            <figcaption>DSR</figcaption>
+          </figure>
+        </div>
+        
+        </section>
+<nav  class="button-container"> 
+    <ul>
+   <li> <a href="/Home.html" class="button">back</a></li>
+    <br>
+   <li> <a href="/attack.html" class="button">next</a></li>
+    </ul>
+
+</nav>
+<script>
+  function toggleCollapsibleSections(uncollapse = false) {
+    const sections = document.querySelectorAll('.collapsible');
+    sections.forEach(section => {
+      if (uncollapse) {
+        section.classList.remove('collapsed');
+      } else {
+        section.classList.toggle('collapsed');
+      }
+    });
+  }
+</script>
+  
+
+  <script src="/assets/vendor/pro.js"></script>
+</body>
+
+</html>
